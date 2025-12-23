@@ -1,13 +1,17 @@
-# uzarq - AI Consulting Landing Page
+# UZARQ Solutions - AI Consulting Landing Page
 
-A high-conversion landing page for AI consulting services, built with Next.js 14, Tailwind CSS, ShadCN UI, and Framer Motion.
+A high-conversion landing page for AI consulting services, designed to turn AI into a practical operating advantage for businesses.
+
+**🌐 Repository:** https://github.com/sowhan/uzarq
 
 ## 🚀 Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS + ShadCN UI
+- **Styling**: Tailwind CSS 4 + ShadCN UI
 - **Animations**: Framer Motion
-- **Forms**: React Hook Form + Zod (ready for integration)
+- **Forms**: React Hook Form + Zod
+- **Icons**: Lucide React
+- **Deployment**: Netlify-ready
 - **Language**: TypeScript
 
 ## 📁 Project Structure
