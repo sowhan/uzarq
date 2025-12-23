@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# uzarq - AI Consulting Landing Page
 
-## Getting Started
+A high-conversion landing page for AI consulting services, built with Next.js 14, Tailwind CSS, ShadCN UI, and Framer Motion.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS + ShadCN UI
+- **Animations**: Framer Motion
+- **Forms**: React Hook Form + Zod (ready for integration)
+- **Language**: TypeScript
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css      # Global styles
+│   ├── layout.tsx       # Root layout with metadata
+│   └── page.tsx         # Main landing page
+├── components/
+│   ├── sections/        # Page sections
+│   │   ├── navbar.tsx
+│   │   ├── hero-section.tsx
+│   │   ├── problem-section.tsx
+│   │   ├── reframe-section.tsx
+│   │   ├── framework-section.tsx
+│   │   ├── outcomes-section.tsx
+│   │   ├── process-section.tsx
+│   │   ├── qualification-section.tsx
+│   │   ├── tech-section.tsx
+│   │   ├── faq-section.tsx
+│   │   ├── cta-section.tsx
+│   │   └── footer.tsx
+│   └── ui/              # Reusable UI components
+│       ├── accordion.tsx
+│       ├── animated-section.tsx
+│       ├── booking-modal.tsx
+│       └── button.tsx
+└── lib/
+    ├── config.ts        # Site configuration
+    └── utils.ts         # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Install dependencies:
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+## ⚙️ Configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Booking Integration (Cal.com / Calendly)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Edit `src/lib/config.ts` to set your booking URL:
+
+```typescript
+export const siteConfig = {
+  // Replace with your actual Cal.com or Calendly link
+  bookingUrl: "https://cal.com/your-username/ai-audit",
+};
+```
+
+### Site Metadata
+
+Update the site metadata in `src/lib/config.ts`:
+
+```typescript
+export const siteConfig = {
+  name: "uzarq",
+  description: "Your description here",
+  url: "https://your-domain.com",
+  contact: {
+    email: "hello@your-domain.com",
+  },
+};
+```
+
+## 🎨 Customization
+
+### Colors
+
+The site uses a dark theme with blue/purple accents. Customize in:
+- `src/app/globals.css` - CSS variables
+- Individual component files for specific colors
+
+### Content
+
+Update the content in:
+- `src/lib/config.ts` - FAQ items, navigation links
+- Individual section components for copy changes
+
+### Fonts
+
+The site uses Inter font. Change in `src/app/layout.tsx`:
+
+```typescript
+import { Inter } from "next/font/google";
+// Or import your preferred font
+```
+
+## 🚀 Deployment
+
+### Build for production:
+
+```bash
+npm run build
+```
+
+### Deploy to Vercel:
+
+```bash
+npx vercel
+```
+
+Or connect your GitHub repository to Vercel for automatic deployments.
+
+## 📧 Future Integrations
+
+The project is structured to easily add:
+
+- **CMS**: Sanity or Contentful for content management
+- **Email**: Resend or Postmark for contact forms
+- **Database**: Supabase for lead storage
+- **Analytics**: Vercel Analytics or Plausible
+
+### Adding a Contact Form
+
+1. Create a form component using React Hook Form + Zod
+2. Set up an API route in `src/app/api/contact/route.ts`
+3. Integrate with Resend/Postmark for email delivery
+4. Store leads in Supabase
+
+## 📝 License
+
+MIT License - feel free to use for your own projects.
